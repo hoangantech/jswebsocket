@@ -29,6 +29,7 @@
           out_msg="Message received "+msg.payloadString+"<br>";
           out_msg=out_msg+"Message received Topic "+msg.destinationName;
           console.log(out_msg);
+          document.getElementById("message").innerHTML=out_msg;
 
       }
       
