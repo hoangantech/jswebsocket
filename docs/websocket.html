@@ -51,7 +51,7 @@
     // Once a connection has been made, make a subscription and send a message.
   
       console.log("Connected ");
-      mqtt.subscribe("sensor1");
+      mqtt.subscribe("ec5/#");
      
       message = new Paho.MQTT.Message("10");
       message.destinationName = "ec5";
