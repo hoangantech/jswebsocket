@@ -43,7 +43,7 @@
     // Once a connection has been made, make a subscription and send a message.
   
       console.log("Connected ");
-      mqtt.subscribe("sensor1");
+      mqtt.subscribe("ec5");
       message = new Paho.MQTT.Message("Hello World");
       message.destinationName = "sensor1";
       mqtt.send(message);
@@ -80,7 +80,7 @@
      <div class="container">
         <h1>MQTT Websocket test</h1>
         <p>MQTT broker: broker.mqttdashboard.com  port: 8000 </p>
-        <p>Topic: sensor1</p>
+        <p>Topic: ec5</p>
         <button id="publish-button" type="button" class="btn btn-primary" onclick="PublishRandomNnumber()">Publish</button>       
         <div class="large-9 columns messagesTop">
           <h3>Messages</h3>
