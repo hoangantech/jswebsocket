@@ -63,6 +63,16 @@
       
       mqtt.connect(options); //connect
       }
+
+      function PublishRandomNnumber(){
+       
+        var data=Math.random()*100;
+        console.log("publish button has beed clicked "+data);
+        message = new Paho.MQTT.Message(data.toString());
+        
+        message.destinationName = "ec5";
+        mqtt.send(message);
+      }
    
     </script>
  </head>
@@ -70,7 +80,8 @@
      <div class="container">
         <h1>MQTT Websocket test</h1>
         <p>MQTT broker: broker.mqttdashboard.com  port: 8000 </p>
-        <p>Topic: sensor1</p>        
+        <p>Topic: sensor1</p>
+        <button id="publish-button" type="button" class="btn btn-primary" onclick="PublishRandomNnumber()">Publish</button>       
         <div class="large-9 columns messagesTop">
           <h3>Messages</h3>
           <p id="message">hello</p><br>
@@ -81,7 +92,7 @@
         <div class="alert alert-warning">
           <strong>Note!</strong>load web as HTTP instead of HTTPS
         </div>
-        <img src="img/load unsafe http.png">
+        <img src="img/load unsafe http.png" style="width:100%">
     </div>
    <script>
   MQTTconnect();
